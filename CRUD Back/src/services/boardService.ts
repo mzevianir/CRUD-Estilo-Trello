@@ -8,7 +8,7 @@ import {
     deleteBoard as deleteBoardRepository,
     updateBoard as updateBoardRepository
 } from "../repositories/boardRepository";
-import { addUserToBoard } from "../services/boardUserService";
+import { addUserToBoard } from "./boardUserService";
 import { getBooleanFromQueryParam } from "../utils/getBooleanFromQueryParam";
 import { stringToNumber } from "../utils/stringToNumber";
 

@@ -1,19 +1,16 @@
 {
-  "name": "crud",
+  "name": "crud-gerenciador-de-tasks",
   "version": "1.0.0",
-  "description": "",
+  "description": "API CRUD de tasks (Express + Prisma)",
+  "private": true,
   "main": "server.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only server.ts",
     "start": "node dist/server.js",
     "build": "tsc",
-    "setup:db": "ts-node setup-database.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "node",
-    "crud"
-  ],
+  "keywords": ["node", "crud", "express", "prisma"],
   "author": "Mateus Zeviani Rodrigues",
   "license": "ISC",
   "type": "commonjs",

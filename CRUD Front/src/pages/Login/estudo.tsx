@@ -4,7 +4,7 @@ export function Estudo() {
 
     const [qnt, setQnt] = []
 
-    function incrementar(){
+    function incrementar() {
         qnt++;
         console.log("Adicionei mais um confia po");
         console.log(qnt);
