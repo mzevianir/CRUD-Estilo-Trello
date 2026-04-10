@@ -1,0 +1,104 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model board {
+  id                                     Int         @id @default(autoincrement())
+  name                                   String
+  created_at                             DateTime? @default(now())
+  updated_at                             DateTime? @updatedAt
+  is_deleted                             Boolean     @default(false)
+  create_user_id                         Int
+  responsible_user_id                    Int
+  users_board_create_user_idTousers      users       @relation("board_create_user_idTousers", fields: [create_user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_board_create_user")
+  users_board_responsible_user_idTousers users       @relation("board_responsible_user_idTousers", fields: [responsible_user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_board_responsible_user")
+  boarduser                              boarduser[]
+  columns                                columns[]
+  tag                                    tag[]
+  task                                   task[]
+}
+
+model boarduser {
+  id       Int   @id @default(autoincrement())
+  user_id  Int
+  board_id Int
+  board    board @relation(fields: [board_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_boarduser_board")
+  users    users @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_boarduser_user")
+
+  @@unique([board_id, user_id])
+}
+
+model columns {
+  id         Int     @id @default(autoincrement())
+  name       String
+  position   Int
+  board_id   Int
+  is_deleted Boolean @default(false)
+  board      board   @relation(fields: [board_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_columns_board")
+  task       task[]
+}
+
+model tag {
+  id         Int       @id @default(autoincrement())
+  name       String
+  created_at DateTime? @default(now())
+  updated_at DateTime? @updatedAt
+  is_deleted Boolean   @default(false)
+  board_id   Int
+  board      board     @relation(fields: [board_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_tag_board")
+  tasktag    tasktag[]
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model task {
+  id                                Int       @id @default(autoincrement())
+  title                             String
+  description                       String?   @default("")
+  status                            String?   @default("")
+  priority                          String?   @default("")
+  due_date                          DateTime?
+  completed_at                      DateTime?
+  created_at                        DateTime? @default(now())
+  updated_at                        DateTime? @updatedAt
+  is_deleted                        Boolean   @default(false)
+  owner_user_id                     Int
+  created_user_id                   Int
+  board_id                          Int
+  column_id                         Int
+  board                             board     @relation(fields: [board_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_task_board")
+  columns                           columns   @relation(fields: [column_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_task_column")
+  users_task_created_user_idTousers users     @relation("task_created_user_idTousers", fields: [created_user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_task_created_user")
+  users_task_owner_user_idTousers   users     @relation("task_owner_user_idTousers", fields: [owner_user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_task_owner_user")
+  tasktag                           tasktag[]
+}
+
+model tasktag {
+  id      Int  @id @default(autoincrement())
+  task_id Int
+  tag_id  Int
+  tag     tag  @relation(fields: [tag_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_tasktag_tag")
+  task    task @relation(fields: [task_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_tasktag_task")
+
+  @@unique([task_id, tag_id])
+}
+
+model users {
+  id                                     Int         @id @default(autoincrement())
+  name                                   String
+  email                                  String
+  password                               String
+  created_at                             DateTime? @default(now())
+  updated_at                             DateTime? @updatedAt
+  is_active                              Boolean     @default(true)
+  is_deleted                             Boolean     @default(false)
+  board_board_create_user_idTousers      board[]     @relation("board_create_user_idTousers")
+  board_board_responsible_user_idTousers board[]     @relation("board_responsible_user_idTousers")
+  boarduser                              boarduser[]
+  task_task_created_user_idTousers       task[]      @relation("task_created_user_idTousers")
+  task_task_owner_user_idTousers         task[]      @relation("task_owner_user_idTousers")
+}

@@ -1,3 +1,7 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
 # Logs
 logs
 *.log
@@ -69,6 +73,16 @@ web_modules/
 .env
 .env.*
 !.env.example
+!**/.env.example
+
+# Ficheiros de ambiente locais (ex.: Vite)
+.env.local
+.env.*.local
+
+# Bases de dados locais (não versionar)
+*.db
+*.sqlite
+*.sqlite3
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache

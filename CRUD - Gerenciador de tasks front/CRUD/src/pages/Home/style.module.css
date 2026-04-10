@@ -1,0 +1,222 @@
+body {
+    line-height: 1.5;
+}
+
+.main {
+    display: block;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #F9FAFB;
+    box-sizing: border-box;
+}
+
+.header {
+    display: block;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    box-sizing: border-box;
+}
+
+.headerInner {
+    display: flex;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.logoCustom span {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.iconCustom {
+    height: 36px;
+    width: 36px;
+}
+
+.icon {
+    color: #ffffff;
+    background: #10b77f;
+    height: 36px;
+    width: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.headerRight {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    overflow: hidden;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.username {
+    color: rgb(26, 35, 50);
+    font-size: 14px;
+}
+
+.logoutButton {
+    background: transparent;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 8px;
+}
+
+.linkIcon{
+    fill: rgb(100, 116, 139)
+}
+
+.link:visited {
+    color: rgb(106, 116, 129)
+}
+
+.span {
+    color: #6a7181;
+    font-size: 14px;
+    cursor: pointer;
+    align-items: center;
+}
+
+.logoutButton:hover {
+    background-color: hsl(210 16% 93%);
+    color: #000000;
+    border-radius: 10px;
+}
+
+.content {
+    display: block;
+    box-sizing: border-box;
+    max-height: 100vh;
+    max-width: 960px;
+    padding: 40px 24px;
+    margin: 0 auto;
+}
+
+.titleSection {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 32px;
+}
+
+.titleIcon {
+    color: transparent;
+    background-color: rgba(13, 150, 104, 0.1);
+    ;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titleText {
+    color: rgb(26, 35, 50);
+    font-size: 24px;
+}
+
+.titleSubtext {
+    color: rgb(106, 116, 129);
+    font-size: 14px;
+}
+
+.boardGrid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.boardCard {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(220, 225, 232);
+    border-radius: 14px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: left;
+}
+
+.boardCardTop{
+    display: flex;
+    justify-content: space-between;
+}
+
+.boardArrow{
+    color: rgb(100, 116, 139);
+    opacity: 0;
+}
+
+.boardCard:hover .boardArrow{
+    opacity: 1;
+}
+
+.boardCardName{
+    color: rgb(26, 35, 50);
+    font-size: 16px;
+    margin-top: 16px;
+}
+
+.boardCardDescription{
+    color: rgb(100, 116, 139);
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.boardCardFooter{
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgb(220, 225, 232);
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 16px;
+}
+
+.boardBadge{
+    border-radius: 6px;
+    background-color: rgb(237, 240, 244);
+    color: rgb(100, 116, 139);
+    font-size: 12px;
+    padding: 4px 8px;
+}

@@ -1,0 +1,273 @@
+body {
+    line-height: 1.5;
+}
+
+.container {
+    display: flex;
+    height: 100dvh;
+    background-color: #F5F7FA;
+}
+
+.brandPanel {
+    display: none;
+    flex-direction: column;
+    background-color: rgb(26, 35, 50);
+    width: 45%;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.brandLogo {
+    align-items: center;
+    gap: 12px;
+    display: flex;
+}
+
+.logoCustom span {
+    color: rgb(245, 247, 250);
+    font-weight: 575;
+}
+
+.brandContent {
+    max-width: 420px;
+}
+
+.brandTitle {
+    color: rgb(245, 247, 250);
+    font-size: 30px;
+    font-weight: 550;
+    line-height: 1.2;
+    text-wrap-mode: wrap;
+    text-wrap-style: balance;
+}
+
+.brandDescription {
+    color: rgba(245, 247, 250, 0.6);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 16px;
+}
+
+.featureList {
+    gap: 20px;
+    color: rgb(26, 35, 50);
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.featureItem {
+    align-items: start;
+    color: rgb(26, 35, 50);
+    gap: 16px;
+    display: flex;
+    line-height: 1.5;
+}
+
+.featureIcon {
+    align-items: center;
+    background-color: rgba(13, 150, 104, 0.15);
+    border-radius: 10px;
+    color: rgb(13, 150, 104);
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    line-height: 1.5;
+    min-width: 40px;
+    width: 40px;
+    font-size: 20px;
+}
+
+.featureTitle {
+    color: rgb(245, 247, 250);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.featureDescription {
+    color: rgba(245, 247, 250, 0.5);
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 2px;
+}
+
+.brandFooter {
+    color: rgba(245, 247, 250, 0.4);
+    font-size: 14px;
+    line-height: 1.5;
+
+}
+
+.formPanel {
+    align-items: center;
+    background-color: rgb(245, 247, 250);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    padding: 48px 24px;
+    overflow-y: auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logoCustomRegister {
+    margin-bottom: 32px;
+    font-weight: bold;
+}
+
+.formWrapper {
+    max-width: 380px;
+    width: 380px;
+    height: 518px;
+}
+
+.formHeader {
+    display: block;
+    margin-bottom: 24px;
+    height: 65px;
+
+}
+
+.formTitle {
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    font-weight: 700;
+    height: 36px;
+    width: 380px;
+}
+
+.formDescription {
+    color: rgb(100, 116, 139);
+    font-size: 14px;
+    height: 21px;
+    margin-top: 8px;
+    width: 380px;
+}
+
+.form {
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    height: 384px;
+    width: 380px;
+}
+
+.fieldGroup {
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    height: 69px;
+    width: 380px;
+}
+
+.label {
+    color: rgb(26, 35, 50);
+    cursor: default;
+    font-size: 14px;
+    font-weight: 500;
+    height: 21px;
+    width: 380px;
+}
+
+.input {
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(220, 225, 232);
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    cursor: text;
+    font-size: 14px;
+    font-weight: 400px;
+    height: 40px;
+    outline-color: rgb(26, 35, 50);
+    outline-style: none;
+    padding: 0 12px;
+    text-align: start;
+    width: 380px;
+    word-spacing: 0px;
+}
+
+.form button {
+    border-radius: 14px;
+    background-color: #10b77f;
+    height: 40px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.form button:hover {
+    opacity: 0.8;
+}
+
+.form input {
+    border: 0.1px solid #D1D5DB;
+    border-radius: 8px;
+    height: 40px;
+    background-color: #ffffff;
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+.cardUser {
+    display: flex;
+    justify-content: space-between;
+    background-color: #10b77f;
+    margin: 10px;
+    padding: 10px;
+    width: 400px;
+    border-radius: 10px;
+}
+
+.cardUser p {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.cardUser span {
+    font-weight: normal;
+}
+
+.cardUser button {
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+.cardUser button:hover {
+    opacity: 0.5;
+}
+
+.loginLink {
+    color: rgb(100, 116, 139);
+    font-size: 14px;
+    height: 21px;
+    margin-top: 24px;
+    text-align: center;
+    width: 380px;
+}
+
+.link {
+    color: #10b77f;
+    font-size: 14px;
+    margin-top: -5px;
+    text-decoration: none;
+}
+
+@media (min-width: 1024px) {
+    .brandPanel {
+        display: flex;
+    }
+
+    .logo {
+        display: none;
+    }
+}

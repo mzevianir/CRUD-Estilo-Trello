@@ -1,0 +1,210 @@
+.container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f5f7fa;
+}
+
+.brandPanel {
+    display: none;
+    flex-direction: column;
+    background-color: rgb(26, 35, 50);
+    width: 45%;
+    justify-content: space-between;
+    padding: 40px;
+    min-height: 644px;
+}
+
+.brandLogo {
+    align-items: center;
+    gap: 12px;
+    display: flex;
+
+}
+
+.logoCustom span {
+    color: rgb(245, 247, 250);
+}
+
+.brandContent {
+    max-width: 420px;
+}
+
+.brandTitle {
+    color: rgb(245, 247, 250);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-wrap-mode: wrap;
+    text-wrap-style: balance;
+}
+
+.brandDescription {
+    color: rgba(245, 247, 250, 0.6);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 16px;
+}
+
+.featureList {
+    gap: 20px;
+    color: rgb(26, 35, 50);
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.featureItem {
+    align-items: start;
+    color: rgb(26, 35, 50);
+    gap: 16px;
+    display: flex;
+    line-height: 1.5;
+}
+
+.featureIcon {
+    align-items: center;
+    background-color: rgba(13, 150, 104, 0.15);
+    border-radius: 10px;
+    color: rgb(13, 150, 104);
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    line-height: 1.5;
+    min-width: 40px;
+    width: 40px;
+    font-size: 20px;
+}
+
+.featureTitle {
+    color: rgb(245, 247, 250);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.featureDescription {
+    color: rgba(245, 247, 250, 0.5);
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 2px;
+}
+
+.brandFooter {
+    color: rgba(245, 247, 250, 0.4);
+    font-size: 14px;
+    line-height: 1.5;
+
+}
+
+.formPanel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 48px 24px;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.logo {
+    display: flex;
+    margin: 0 0 40px 0;
+}
+
+.logoCustomLogin span {
+    font-weight: bold;
+}
+
+.formWrapper {
+    display: block;
+    width: 380px;
+    max-width: 380px;
+}
+
+.formHeader {
+    display: block;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0 0 32px 0;
+}
+
+.formTitle {
+    color: #000000;
+    font-size: 24px;
+    margin-block-end: 0;
+    margin-block-start: 0;
+    height: 36px;
+}
+
+.formSubtitle {
+    display: block;
+    color: #6a7181;
+    font-size: 14px;
+    margin-block-start: 8px;
+    margin-block-end: 0;
+    height: 21px;
+}
+
+.link {
+    color: #10b77f;
+    font-size: 14px;
+    margin-top: -5px;
+    text-decoration: none;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 380px;
+    width: 100%;
+}
+
+.form button {
+    border-radius: 14px;
+    background-color: #10b77f;
+    height: 40px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.form button:hover {
+    opacity: 0.8;
+}
+
+.form input {
+    border: 0.1px solid #D1D5DB;
+    border-radius: 8px;
+    height: 40px;
+    background-color: #ffffff;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    color: #000000
+}
+
+.p {
+    color: #6a7181;
+    font-size: 14px;
+    text-align: center;
+    margin: 24px 0 0 0;
+}
+
+@media (min-width: 1024px) {
+    .brandPanel {
+        display: flex;
+    }
+
+    .logo {
+        display: none;
+    }
+}
