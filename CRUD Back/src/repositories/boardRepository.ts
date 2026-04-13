@@ -4,7 +4,7 @@
 
 import { prisma } from "../database/prisma";
 
-export async function createBoard(name: string, numberResponsibleUserId: number) {
+export async function createBoard(name: string, numberResponsibleUserId: number, description: string) {
     try {
 
         const now = new Date();
@@ -16,7 +16,8 @@ export async function createBoard(name: string, numberResponsibleUserId: number)
                 updated_at: now,
                 is_deleted: false,
                 responsible_user_id: numberResponsibleUserId,
-                create_user_id: numberResponsibleUserId
+                create_user_id: numberResponsibleUserId,
+                description
             },
         })
 

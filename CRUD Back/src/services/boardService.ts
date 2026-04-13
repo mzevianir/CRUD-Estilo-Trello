@@ -12,13 +12,14 @@ import { addUserToBoard } from "./boardUserService";
 import { getBooleanFromQueryParam } from "../utils/getBooleanFromQueryParam";
 import { stringToNumber } from "../utils/stringToNumber";
 
-export async function createBoard(name: string, responsibleUserId: string) {
+export async function createBoard(name: string, responsibleUserId: string, description: string) {
     try {
 
         const numberResponsibleUserId = stringToNumber(responsibleUserId);
 
-        const board = await createBoardRepository(name, numberResponsibleUserId);
+        const board = await createBoardRepository(name, numberResponsibleUserId, description);
 
+        // Assim que cria um board, pega o id do responsável/user que criou pelo board e cria uma relação automática
         await addUserToBoard(String(board.id), responsibleUserId);
 
         return {

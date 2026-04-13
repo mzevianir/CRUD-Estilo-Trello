@@ -1,6 +1,7 @@
 import {
   addUserToBoard as addUserToBoardRepository,
   getBoardByUsers as getBoardByUsersRepository,
+  getUsersByBoard as getUsersByBoardRepository,
   removeUserFromBoard as removeUserFromBoardRepository,
   updateUsersFromBoard as updateUsersFromBoardRepository
 } from "../repositories/boardUserRepository";
@@ -130,7 +131,3 @@ export async function updateUsersFromBoard(boardId: string, usersId: any) {
     throw new Error(error?.message ?? "Ocorreu um erro ao atualizar usuários do board");
   }
 }
-function getUsersByBoardRepository(boardIdNum: number) {
-  throw new Error("Function not implemented.");
-}
-

@@ -31,6 +31,9 @@ export async function getBoardByUsers(userId: number) {
             orderBy: {
                 id: 'asc',
             },
+            include:{
+                board: true,
+            }
         })
 
         return {

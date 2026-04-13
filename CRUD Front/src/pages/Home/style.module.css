@@ -31,7 +31,7 @@ body {
     box-sizing: border-box;
 }
 
-.logoCustom span {
+ƒ .logoCustom span {
     font-size: 14px;
     font-weight: bold;
 }
@@ -100,7 +100,7 @@ body {
     gap: 8px;
 }
 
-.linkIcon{
+.linkIcon {
     fill: rgb(100, 116, 139)
 }
 
@@ -165,58 +165,4 @@ body {
     display: grid;
     gap: 16px;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.boardCard {
-    background-color: rgb(255, 255, 255);
-    border: 1px solid rgb(220, 225, 232);
-    border-radius: 14px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    text-align: left;
-}
-
-.boardCardTop{
-    display: flex;
-    justify-content: space-between;
-}
-
-.boardArrow{
-    color: rgb(100, 116, 139);
-    opacity: 0;
-}
-
-.boardCard:hover .boardArrow{
-    opacity: 1;
-}
-
-.boardCardName{
-    color: rgb(26, 35, 50);
-    font-size: 16px;
-    margin-top: 16px;
-}
-
-.boardCardDescription{
-    color: rgb(100, 116, 139);
-    font-size: 14px;
-    margin-top: 4px;
-}
-
-.boardCardFooter{
-    display: flex;
-    align-items: center;
-    border-top: 1px solid rgb(220, 225, 232);
-    gap: 8px;
-    margin-top: 16px;
-    padding-top: 16px;
-}
-
-.boardBadge{
-    border-radius: 6px;
-    background-color: rgb(237, 240, 244);
-    color: rgb(100, 116, 139);
-    font-size: 12px;
-    padding: 4px 8px;
 }

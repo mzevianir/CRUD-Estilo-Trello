@@ -10,11 +10,12 @@ datasource db {
 model board {
   id                                     Int         @id @default(autoincrement())
   name                                   String
-  created_at                             DateTime? @default(now())
-  updated_at                             DateTime? @updatedAt
+  created_at                             DateTime?   @default(now())
+  updated_at                             DateTime?   @updatedAt
   is_deleted                             Boolean     @default(false)
   create_user_id                         Int
   responsible_user_id                    Int
+  description                            String?     @db.VarChar
   users_board_create_user_idTousers      users       @relation("board_create_user_idTousers", fields: [create_user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_board_create_user")
   users_board_responsible_user_idTousers users       @relation("board_responsible_user_idTousers", fields: [responsible_user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_board_responsible_user")
   boarduser                              boarduser[]
@@ -92,8 +93,8 @@ model users {
   name                                   String
   email                                  String
   password                               String
-  created_at                             DateTime? @default(now())
-  updated_at                             DateTime? @updatedAt
+  created_at                             DateTime?   @default(now())
+  updated_at                             DateTime?   @updatedAt
   is_active                              Boolean     @default(true)
   is_deleted                             Boolean     @default(false)
   board_board_create_user_idTousers      board[]     @relation("board_create_user_idTousers")

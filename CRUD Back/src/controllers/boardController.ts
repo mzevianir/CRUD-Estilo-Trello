@@ -15,7 +15,7 @@ const boardRouter = Router();
 
 boardRouter.post('/boards', async (req: Request, res: Response) => {
     try {
-        const boardCreate = await createBoard(req.body.name, req.body.responsibleUserId);
+        const boardCreate = await createBoard(req.body.name, req.body.responsibleUserId, req.body.description);
         return res.status(200).send(boardCreate);
     } catch (error: any) {
         return res.status(400).send({

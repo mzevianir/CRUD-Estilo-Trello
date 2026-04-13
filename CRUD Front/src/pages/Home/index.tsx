@@ -1,14 +1,23 @@
 import styles from "./style.module.css"
 import { Logo } from "../../components/Logo"
 import { MdLogout } from "react-icons/md";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import avatar from "../../assets/avatar.jpg";
 import { TbLayoutGrid } from "react-icons/tb";
-import { LogoIcon } from "../../components/LogoIcon";
-import { FaArrowRight } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import api from "../../services/api";
+import { BoardIcon } from "../../components/BoardIcon";
 
 export function Home() {
+
+    type Board = {
+        board: any;
+        id: number;
+        name: string;
+        is_deleted: boolean;
+        create_user_id: number;
+        responsible_user_id: number;
+    }
 
     const userData = localStorage.getItem("user");
 
@@ -20,36 +29,17 @@ export function Home() {
 
     const user = JSON.parse(userData);
 
-    const [boards, setBoards] = useState<string[]>([]);
+    const userId = Number(user.userId);
 
-    const listBoards = ["Board1", "Board2", "Board3"];
+    const [boards, setBoards] = useState<Board[]>([]);
 
-    function renderButtonBoard() {
-        return boards.map((board) => (
-            <button className={styles.boardCard}>
-                <div className={styles.boardCardTop}>
-                    <div className={styles.boardIconWrapper}>
-                        <LogoIcon className={styles.iconCustom} size={16} />
-                    </div>
-                    <div className={styles.boardArrow}>
-                        <FaArrowRight />
-                    </div>
-                </div>
-                <h3 className={styles.boardCardName}>
-                    Desenvolvimento
-                </h3>
-                <p className={styles.boardCardDescription}>
-                    Tarefas de desenvolvimento de software e tecnologia
-                </p>
-                <div className={styles.boardCardFooter}>
-                    <span className={styles.boardBadge}> {board} </span>
-                </div>
-            </button>
-        ));
+    async function getBoards(userId: number) {
+        const listBoards = await api.get(`/user/${userId}/boards`)
+        setBoards(listBoards.data.boards)
     }
 
     useEffect(() => {
-        setBoards(listBoards)
+        getBoards(userId)
     }, []);
 
     return (
@@ -88,67 +78,11 @@ export function Home() {
                     </div>
                 </div>
                 <div className={styles.boardGrid}>
-                    {renderButtonBoard()}
-                    {/* <button className={styles.boardCard}>
-                        <div className={styles.boardCardTop}>
-                            <div className={styles.boardIconWrapper}>
-                                <LogoIcon className={styles.iconCustom} size={16}
-                                    style={{ backgroundColor: "rgb(14, 165, 233)" }} />
-                            </div>
-                            <div className={styles.boardArrow}>
-                                <FaArrowRight />
-                            </div>
-                        </div>
-                        <h3 className={styles.boardCardName}>
-                            Marketing
-                        </h3>
-                        <p className={styles.boardCardDescription}>
-                            Campanhas, leads e tudo que há de bom
-                        </p>
-                        <div className={styles.boardCardFooter}>
-                            <span className={styles.boardBadge}> 5 tarefas </span>
-                        </div>
-                    </button>
-                    <button className={styles.boardCard}>
-                        <div className={styles.boardCardTop}>
-                            <div className={styles.boardIconWrapper}>
-                                <LogoIcon className={styles.iconCustom} size={16}
-                                    style={{ backgroundColor: "rgb(245, 158, 11)" }} />
-                            </div>
-                            <div className={styles.boardArrow}>
-                                <FaArrowRight />
-                            </div>
-                        </div>
-                        <h3 className={styles.boardCardName}>
-                            Treino
-                        </h3>
-                        <p className={styles.boardCardDescription}>
-                            Tarefas para aplicar no dia a dia para saúde
-                        </p>
-                        <div className={styles.boardCardFooter}>
-                            <span className={styles.boardBadge}> 5 tarefas </span>
-                        </div>
-                    </button>
-                    <button className={styles.boardCard}>
-                        <div className={styles.boardCardTop}>
-                            <div className={styles.boardIconWrapper}>
-                                <LogoIcon className={styles.iconCustom} size={16}
-                                    style={{ backgroundColor: "rgb(244, 63, 94)" }} />
-                            </div>
-                            <div className={styles.boardArrow}>
-                                <FaArrowRight />
-                            </div>
-                        </div>
-                        <h3 className={styles.boardCardName}>
-                            Estudos
-                        </h3>
-                        <p className={styles.boardCardDescription}>
-                            Coisas para estudar sobre programação
-                        </p>
-                        <div className={styles.boardCardFooter}>
-                            <span className={styles.boardBadge}> 5 tarefas </span>
-                        </div>
-                    </button> */}
+                    {boards.map((board) => {
+                        if (board.board.is_deleted === false) {
+                            return <BoardIcon key={board.id} board={board.board} />
+                        }
+                    })}
                 </div>
             </div>
         </main >

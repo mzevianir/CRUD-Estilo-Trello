@@ -1,0 +1,103 @@
+.boardCard {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(220, 225, 232);
+    border-radius: 14px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: left;
+}
+
+.boardCardTop {
+    display: flex;
+    justify-content: space-between;
+}
+
+.boardActions {
+    color: rgb(100, 116, 139);
+    opacity: 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.boardEdit {
+    cursor: pointer;
+    border: none;
+    color: rgb(100, 116, 139);
+    background-color: rgb(255, 255, 255);
+    width: 25px;
+    height: 25px;
+}
+
+.popover {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(220, 225, 232);
+    min-width: 140px;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.btnEditPopover,
+.btnDeletePopover {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    gap: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.btnDeletePopover {
+    color: red;
+}
+
+.btnEditPopover:hover,
+.btnDeletePopover:hover {
+    background-color: rgb(237, 240, 244);
+}
+
+.boardCard:hover .boardActions {
+    opacity: 1;
+}
+
+.boardEdit:hover {
+    background-color: rgb(220, 225, 232);
+    border-radius: 5px;
+}
+
+.boardCardName {
+    color: rgb(26, 35, 50);
+    font-size: 16px;
+    margin-top: 16px;
+}
+
+.boardCardDescription {
+    color: rgb(100, 116, 139);
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.boardCardFooter {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgb(220, 225, 232);
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 16px;
+}
+
+.boardBadge {
+    border-radius: 6px;
+    background-color: rgb(237, 240, 244);
+    color: rgb(100, 116, 139);
+    font-size: 12px;
+    padding: 4px 8px;
+}
