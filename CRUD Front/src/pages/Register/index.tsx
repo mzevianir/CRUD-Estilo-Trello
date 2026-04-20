@@ -2,7 +2,7 @@
 import { useEffect, useState, useRef } from 'react';
 import styles from "./style.module.css";
 import { Logo } from "../../components/Logo"
-import api from '../../services/api'
+import api from '../services/api';
 import { Link, useNavigate } from 'react-router-dom';
 import { LuUserPlus } from "react-icons/lu";
 import { AiOutlineSafety } from "react-icons/ai";

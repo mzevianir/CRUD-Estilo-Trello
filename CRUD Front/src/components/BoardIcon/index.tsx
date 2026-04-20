@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { FaRegTrashAlt } from 'react-icons/fa';
 import { RxPencil1 } from "react-icons/rx";
+import { ModalDelete } from "../ModalDelete";
 
 export function BoardIcon(board: any) {
 
@@ -13,10 +14,12 @@ export function BoardIcon(board: any) {
 
     const [popover, setPopover] = useState(false)
 
+    const [confirmDelete, setConfirmDelete] = useState(false)
+
     const childrenClick = (event: any) => {
         event.stopPropagation();
 
-        setPopover(!popover);
+        setPopover(prevPopover => !prevPopover);
     }
 
     return (
@@ -34,7 +37,10 @@ export function BoardIcon(board: any) {
                             <button className={styles.btnEditPopover} onClick={childrenClick}>
                                 <RxPencil1 size={16} /> Editar
                             </button>
-                            <button className={styles.btnDeletePopover} onClick={childrenClick}>
+                            <button className={styles.btnDeletePopover} onClick={(event) => {
+                                childrenClick(event)
+                                setConfirmDelete(true)
+                            }}>
                                 < FaRegTrashAlt size={16} /> Excluir</button>
                         </div>}
                     </div>
@@ -52,6 +58,8 @@ export function BoardIcon(board: any) {
             <div className={styles.boardCardFooter}>
                 <span className={styles.boardBadge}> AQUI É X TAREFAS, PRECISO IMPLEMENTAR </span>
             </div>
+            {/* Se confirmDelete for true aparece o modal */}
+            {confirmDelete && <ModalDelete />}
         </div>
     )
 }

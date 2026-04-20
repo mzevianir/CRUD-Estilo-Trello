@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { TbLayoutGrid } from "react-icons/tb";
 import { LuUsers } from "react-icons/lu";
 import { CiCircleCheck } from "react-icons/ci";
-import api from "../../services/api";
+import api from '../services/api';
 import { useRef } from "react";
 
 export function Login() {

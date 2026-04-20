@@ -1,0 +1,9 @@
+/* *{
+    border: 1px solid red;
+} */
+
+.modalOverlay {
+    position: sticky;
+    top: 50%;
+    border: 1px solid red;
+}

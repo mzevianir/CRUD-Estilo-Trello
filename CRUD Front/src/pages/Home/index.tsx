@@ -1,11 +1,11 @@
 import styles from "./style.module.css"
 import { Logo } from "../../components/Logo"
 import { MdLogout } from "react-icons/md";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import avatar from "../../assets/avatar.jpg";
 import { TbLayoutGrid } from "react-icons/tb";
 import { useEffect, useState } from "react";
-import api from "../../services/api";
+import api from '../services/api';
 import { BoardIcon } from "../../components/BoardIcon";
 
 export function Home() {

@@ -3,7 +3,7 @@ import { Login } from './pages/Login'
 import { Home } from './pages/Home'
 import { Register } from './pages/Register'
 import { Board } from './pages/Board'
-import { Estudo } from './pages/Login/estudo'
+import { Estudo } from './pages/Estudo/Aula3'
 
 // O main chama o APP e o APP retorna as rotas/pages disponiveis
 // Componente do React é assim:
